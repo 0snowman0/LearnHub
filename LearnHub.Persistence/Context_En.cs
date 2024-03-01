@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LearnHub.Domain.Model.course;
+using LearnHub.Domain.Model.FinancialSector;
+using LearnHub.Identity.Model.En;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearnHub.Persistence
 {
@@ -18,5 +21,9 @@ namespace LearnHub.Persistence
         }
 
 
+        public  DbSet<Course_En> course_Ens  { get; set; }
+        public  DbSet<Payment_En> payment_Ens  { get; set; }
+        public  DbSet<User_En> user_Ens  { get; set; }
+        public  DbSet<RefreshToken> refreshTokens  { get; set; }
     }
 }

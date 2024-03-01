@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LearnHub.Application\LearnHub.Application.csproj" />
+    <ProjectReference Include="..\LearnHub.Domain\LearnHub.Domain.csproj" />
+    <ProjectReference Include="..\LearnHub.Identity\LearnHub.Identity.csproj" />
   </ItemGroup>
 
 </Project>
