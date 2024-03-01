@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Swashbuckle.AspNetCore.Filters;
+using LearnHub.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,7 +68,7 @@ builder.Services.ConfigurePersistenceServices(builder.Configuration);
 
 builder.Services.ConfigureIdentityServices();
 
-
+builder.Services.ConfigureApplicationServices();
 
 #endregion
 
