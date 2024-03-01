@@ -15,8 +15,8 @@ namespace LearnHub.Identity
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
 
+            services.AddScoped<IUserService,UserService>();
 
-            services.AddScoped<IUserService, UserService>();
         }
     }
 }

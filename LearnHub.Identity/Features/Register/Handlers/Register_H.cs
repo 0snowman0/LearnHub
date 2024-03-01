@@ -30,6 +30,7 @@ namespace LearnHub.Identity.Features.Register.Handlers
         {
             CreatePasswordHash(request.register_Dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
+            user.Email = request.register_Dto.Email;
             user.Username = request.register_Dto.UserName;
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
