@@ -25,5 +25,9 @@ namespace LearnHub.Domain.Model.course
         public  CourseLevel_Em CourseLevel { get; set; } 
         [Required]
         public  int  NumberVideo  { get; set; }
+
+        //relation
+        public virtual ICollection<SubCourse_En> SubCourses { get; set; } = new List<SubCourse_En>();
+
     }
 }

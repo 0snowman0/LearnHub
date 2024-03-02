@@ -30,5 +30,14 @@
             StatusCode = -1;
             Data = data;
         }
+
+        public void NotFound(object? data = null, string? message = null, List<string>? errors = null)
+        {
+            IsSuccess = false;
+            Message = message ?? "Not found";
+            Errors = errors;
+            StatusCode = 404;
+            Data = data;
+        }
     }
 }

@@ -28,5 +28,7 @@ namespace LearnHub.Persistence
         public  DbSet<RefreshToken> refreshTokens  { get; set; }
         public  DbSet<SupportAdmin_En> supportAdmin_Ens { get; set; }
         public  DbSet<SupportStudent_En> supportStudent_Ens  { get; set; }
+        public  DbSet<SubCourse_En> subCourse_Ens  { get; set; }
+        
     }
 }

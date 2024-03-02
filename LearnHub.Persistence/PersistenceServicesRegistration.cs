@@ -1,4 +1,5 @@
 ﻿using LearnHub.Application.Contracts.Generic;
+using LearnHub.Application.Contracts.Support.SupportAdmin;
 using LearnHub.Application.Contracts.Support.SupportStudent;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.IdentityService.Implement;
@@ -28,6 +29,8 @@ namespace LearnHub.Persistence
             services.AddScoped<Iuser, User_Rep>();
 
             services.AddScoped<ISupportStudent , SupportStudent_Rep>();
+
+            services.AddScoped<ISupportAdmin , SupportAdmin_Rep>();
 
 
             return services;

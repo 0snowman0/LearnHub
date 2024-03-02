@@ -26,6 +26,8 @@ namespace LearnHub.Application.Features.SupportStudent.Handlers.Commands
 
 
             var NewSupportStudent = _mapper.Map<SupportStudent_En>(request.create_SupportStudent_Dto);
+            NewSupportStudent.UserId = request.UserId;
+            NewSupportStudent.Date = DateTime.UtcNow;
 
             await _supportStudent.Add(NewSupportStudent);
 

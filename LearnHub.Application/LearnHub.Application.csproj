@@ -21,10 +21,6 @@
     <Folder Include="Dto\AAA\common\" />
     <Folder Include="Dto\AAA\command\" />
     <Folder Include="Dto\AAA\Queries\" />
-    <Folder Include="Features\SupportAdmin\Handlers\Commands\" />
-    <Folder Include="Features\SupportAdmin\Handlers\Queries\" />
-    <Folder Include="Features\SupportAdmin\Requests\Commands\" />
-    <Folder Include="Features\SupportAdmin\Requests\Queries\" />
     <Folder Include="Features\Course\Handlers\Commands\" />
     <Folder Include="Features\Course\Handlers\Queries\" />
     <Folder Include="Features\Course\Requests\Commands\" />

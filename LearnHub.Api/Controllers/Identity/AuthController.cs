@@ -7,7 +7,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LearnHub.Api.Controllers
+namespace LearnHub.Api.Controllers.Identity
 {
     public class AuthController
     {

@@ -19,6 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 
 
+#region Swagger and Identity
 //add
 builder.Services.AddHttpContextAccessor();
 
@@ -58,7 +59,7 @@ builder.Services.AddCors(options => options.AddPolicy(name: "NgOrigins",
         policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
     }));
 
-
+#endregion
 
 
 

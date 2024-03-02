@@ -40,7 +40,7 @@ namespace LearnHub.Application.Features.SupportStudent.Handlers.Queries
             var result = _mapper.Map<List<SupportStudent_Dto>>(supportStudent);
 
 
-            response.Success();
+            response.Success(result);
             response.StatusCode = 200;
             response.Message = "success";
 
