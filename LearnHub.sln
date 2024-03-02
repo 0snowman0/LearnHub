@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{71CDA395-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnHub.Test", "LearnHub.Test\LearnHub.Test.csproj", "{A6FC7D5B-EF7A-454A-871B-94E4046C2613}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnHub.File", "LearnHub.File\LearnHub.File.csproj", "{F27E019E-359C-4691-A248-1EA75D9484D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{A6FC7D5B-EF7A-454A-871B-94E4046C2613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6FC7D5B-EF7A-454A-871B-94E4046C2613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6FC7D5B-EF7A-454A-871B-94E4046C2613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27E019E-359C-4691-A248-1EA75D9484D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27E019E-359C-4691-A248-1EA75D9484D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27E019E-359C-4691-A248-1EA75D9484D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27E019E-359C-4691-A248-1EA75D9484D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{8EF9869C-AB32-4801-A1B3-91973C47B193} = {69245BE2-8459-4196-B6E3-E3E180B4E964}
 		{8ABB8002-13F7-42FA-BCC9-0087AB22CBF9} = {69245BE2-8459-4196-B6E3-E3E180B4E964}
 		{A6FC7D5B-EF7A-454A-871B-94E4046C2613} = {71CDA395-D291-4E0C-AE5D-1B99ECE7CBA7}
+		{F27E019E-359C-4691-A248-1EA75D9484D3} = {69245BE2-8459-4196-B6E3-E3E180B4E964}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64F7ECC9-3055-44AB-B52A-E13C7BD5A11C}
