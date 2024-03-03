@@ -1,14 +1,17 @@
-﻿using LearnHub.Application.Contracts.Generic;
+﻿using LearnHub.Application.Contracts.comment;
+using LearnHub.Application.Contracts.Generic;
 using LearnHub.Application.Contracts.Support.SupportAdmin;
 using LearnHub.Application.Contracts.Support.SupportStudent;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.IdentityService.Implement;
+using LearnHub.Persistence.Repositories.comment;
 using LearnHub.Persistence.Repositories.Generic;
 using LearnHub.Persistence.Repositories.Identity;
 using LearnHub.Persistence.Repositories.Support;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Windows.Input;
 
 namespace LearnHub.Persistence
 {
@@ -32,6 +35,7 @@ namespace LearnHub.Persistence
 
             services.AddScoped<ISupportAdmin , SupportAdmin_Rep>();
 
+            services.AddScoped<IComment , Comment_Rep>();
 
             return services;
         }

@@ -1,4 +1,5 @@
-﻿using LearnHub.Domain.Model.course;
+﻿using LearnHub.Domain.Model.Comment;
+using LearnHub.Domain.Model.course;
 using LearnHub.Domain.Model.FinancialSector;
 using LearnHub.Domain.Model.Support;
 using LearnHub.Identity.Model.En;
@@ -29,6 +30,7 @@ namespace LearnHub.Persistence
         public  DbSet<SupportAdmin_En> supportAdmin_Ens { get; set; }
         public  DbSet<SupportStudent_En> supportStudent_Ens  { get; set; }
         public  DbSet<SubCourse_En> subCourse_Ens  { get; set; }
+        public  DbSet<Comment_En> comment_Ens  { get; set; }
         
     }
 }
