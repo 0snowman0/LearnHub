@@ -1,10 +1,13 @@
 ﻿using LearnHub.Application.Dto.comment.command;
 using LearnHub.Application.Dto.comment.Queries;
+using LearnHub.Application.Dto.Course.course.command;
+using LearnHub.Application.Dto.Course.course.Queries;
 using LearnHub.Application.Dto.Support.SupportAdmin.command;
 using LearnHub.Application.Dto.Support.SupportAdmin.Queries;
 using LearnHub.Application.Dto.Support.SupportStudent.command;
 using LearnHub.Application.Dto.Support.SupportStudent.Queries;
 using LearnHub.Domain.Model.Comment;
+using LearnHub.Domain.Model.course;
 using LearnHub.Domain.Model.Support;
 
 namespace LearnHub.Application.Profile
@@ -46,6 +49,16 @@ namespace LearnHub.Application.Profile
             CreateMap<Comment_En,Create_Comment_Dto>().ReverseMap();
             
             CreateMap<Comment_En,Update_Comment_Dto>().ReverseMap();
+            #endregion
+
+            #region Course
+
+            CreateMap<Course_En, Course_Dto>().ReverseMap();
+
+            CreateMap<Course_En, Create_Course_Dto>().ReverseMap();
+            
+            CreateMap<Course_En, Update_Course_Dto>().ReverseMap();
+
             #endregion
         }
     }

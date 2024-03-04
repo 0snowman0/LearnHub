@@ -4,6 +4,7 @@ using LearnHub.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LearnHub.Persistence.Migrations
 {
     [DbContext(typeof(Context_En))]
-    partial class Context_EnModelSnapshot : ModelSnapshot
+    [Migration("20240304081543_ChangeRelation1")]
+    partial class ChangeRelation1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,7 +161,7 @@ namespace LearnHub.Persistence.Migrations
                         .HasMaxLength(3000)
                         .HasColumnType("nvarchar(3000)");
 
-                    b.Property<string>("CourseImageName")
+                    b.Property<string>("CourseImage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -171,7 +174,7 @@ namespace LearnHub.Persistence.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<string>("CourseVideoName")
+                    b.Property<string>("CourseVideo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

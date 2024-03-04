@@ -6,5 +6,6 @@ namespace LearnHub.File.Interface
     {
         public Tuple<int, string> SaveImage(IFormFile imageFile);
         public bool DeleteImage(string imageFileName);
+        Tuple<int, string> ReturnImageName(IFormFile imageFile);
     }
 }

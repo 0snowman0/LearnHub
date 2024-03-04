@@ -11,15 +11,10 @@ namespace LearnHub.Domain.Model.course
         public  bool IsFree { get; set; }
         public string? ImageName { get; set; }
 
+        public  int courseId { get; set; }
+
+
         [NotMapped]
         public IFormFile? ImageFile { get; set; }
-
-
-
-        ///relation
-        public  int courseId { get; set; }
-        [ForeignKey("{courseId}")]
-        public  Course_En? Course_En { get; set; }
-
     }
 }

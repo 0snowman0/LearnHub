@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LearnHub.File\LearnHub.File.csproj" />
     <ProjectReference Include="..\LearnHub.Persistence\LearnHub.Persistence.csproj" />
   </ItemGroup>
 

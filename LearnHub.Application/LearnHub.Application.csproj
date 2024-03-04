@@ -21,10 +21,10 @@
     <Folder Include="Dto\AAA\common\" />
     <Folder Include="Dto\AAA\command\" />
     <Folder Include="Dto\AAA\Queries\" />
-    <Folder Include="Features\Course\Handlers\Commands\" />
-    <Folder Include="Features\Course\Handlers\Queries\" />
-    <Folder Include="Features\Course\Requests\Commands\" />
-    <Folder Include="Features\Course\Requests\Queries\" />
+    <Folder Include="Features\AAA\Handlers\Commands\" />
+    <Folder Include="Features\AAA\Handlers\Queries\" />
+    <Folder Include="Features\AAA\Requests\Commands\" />
+    <Folder Include="Features\AAA\Requests\Queries\" />
     <Folder Include="Features\Payment\Handlers\Commands\" />
     <Folder Include="Features\Payment\Handlers\Queries\" />
     <Folder Include="Model\" />
@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LearnHub.Domain\LearnHub.Domain.csproj" />
+    <ProjectReference Include="..\LearnHub.File\LearnHub.File.csproj" />
   </ItemGroup>
 
 </Project>

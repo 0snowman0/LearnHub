@@ -16,7 +16,7 @@
             IsSuccess = true;
             Message = message ?? "Success...";
             Errors = errors;
-            StatusCode = 0;
+            StatusCode = 200;
             Data = data;
 
         }

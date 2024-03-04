@@ -1,6 +1,9 @@
 ﻿using LearnHub.Domain.Enum;
 using LearnHub.Domain.Model.common;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnHub.Domain.Model.course
 {
@@ -8,26 +11,33 @@ namespace LearnHub.Domain.Model.course
     {
         [Required]
         public  int TeacherId { get; set; }
+        
         [Required]
         public  bool AdminApproval { get; set; }
+        
         [Required]
         [MaxLength(150)]
         public string CourseName { get; set; } = null!;
+        
         [Required]
         [MaxLength(3000)]
         public string CourseDescription { get; set; } = null!;
+        
         [Required]
-        public string CourseImage { get; set; } = null!;
+        public string CourseImageName { get; set; } = null!;
+        
         [Required]
-        public string CourseVideo { get; set; } = null!;
+        public string CourseVideoName { get; set; } = null!;
+       
         [Required]
         [MaxLength(25)]
-        public  CourseLevel_Em CourseLevel { get; set; } 
+        public  CourseLevel_Em CourseLevel { get; set; }
+
         [Required]
-        public  int  NumberVideo  { get; set; }
+        [DefaultValue(1)]
+        public int NumberVideo { get; set; } 
 
-        //relation
-        public virtual ICollection<SubCourse_En> SubCourses { get; set; } = new List<SubCourse_En>();
-
+        [NotMapped]
+        public IFormFile? ImageFile { get; set; }
     }
 }

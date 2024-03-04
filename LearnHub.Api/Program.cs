@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Swashbuckle.AspNetCore.Filters;
 using LearnHub.Application;
+using LearnHub.File;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,6 +71,8 @@ builder.Services.ConfigurePersistenceServices(builder.Configuration);
 builder.Services.ConfigureIdentityServices();
 
 builder.Services.ConfigureApplicationServices();
+
+builder.Services.ConfigureFileServices();
 
 #endregion
 
