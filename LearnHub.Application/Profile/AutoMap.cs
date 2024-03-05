@@ -2,6 +2,8 @@
 using LearnHub.Application.Dto.comment.Queries;
 using LearnHub.Application.Dto.Course.course.command;
 using LearnHub.Application.Dto.Course.course.Queries;
+using LearnHub.Application.Dto.Course.subcourse.command;
+using LearnHub.Application.Dto.Course.subcourse.Queries;
 using LearnHub.Application.Dto.Support.SupportAdmin.command;
 using LearnHub.Application.Dto.Support.SupportAdmin.Queries;
 using LearnHub.Application.Dto.Support.SupportStudent.command;
@@ -60,6 +62,19 @@ namespace LearnHub.Application.Profile
             CreateMap<Course_En, Update_Course_Dto>().ReverseMap();
 
             #endregion
+
+            #region SubCourse
+
+            CreateMap<SubCourse_En , SubCourse_Dto>().ReverseMap();
+
+            CreateMap<SubCourse_En , Create_SubCourse_Dto>().ReverseMap();
+
+            CreateMap<SubCourse_En , Update_SubCourse_Dto>().ReverseMap();
+
+            CreateMap<SubCourse_En , UpdateVedio_SubCourse_Dto>().ReverseMap();
+            #endregion
+
+
         }
     }
 }
