@@ -9,6 +9,7 @@ using System.Text;
 using Swashbuckle.AspNetCore.Filters;
 using LearnHub.Application;
 using LearnHub.File;
+using ZarinPal.Class;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,6 +77,13 @@ builder.Services.ConfigureFileServices();
 
 #endregion
 
+
+
+builder.Services.AddScoped<Payment, ZarinPal.Class.Payment>();
+
+builder.Services.AddSingleton<ZarinPal.Class.Authority>();
+
+builder.Services.AddTransient<ZarinPal.Class.Transactions>();
 
 
 var app = builder.Build();
