@@ -53,6 +53,7 @@ namespace LearnHub.Application.Profile
             CreateMap<Comment_En,Update_Comment_Dto>().ReverseMap();
             #endregion
 
+
             #region Course
 
             CreateMap<Course_En, Course_Dto>().ReverseMap();
@@ -62,6 +63,7 @@ namespace LearnHub.Application.Profile
             CreateMap<Course_En, Update_Course_Dto>().ReverseMap();
 
             #endregion
+
 
             #region SubCourse
 
@@ -73,8 +75,6 @@ namespace LearnHub.Application.Profile
 
             CreateMap<SubCourse_En , UpdateVedio_SubCourse_Dto>().ReverseMap();
             #endregion
-
-
         }
     }
 }

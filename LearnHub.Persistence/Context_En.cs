@@ -31,6 +31,7 @@ namespace LearnHub.Persistence
         public  DbSet<SupportStudent_En> supportStudent_Ens  { get; set; }
         public  DbSet<SubCourse_En> subCourse_Ens  { get; set; }
         public  DbSet<Comment_En> comment_Ens  { get; set; }
-        
+        public  DbSet<CoursePpurchased_En> coursePpurchased_Ens { get; set; }
+
     }
 }

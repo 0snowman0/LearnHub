@@ -6,7 +6,7 @@ namespace LearnHub.Domain.Model.FinancialSector
 {
     public class Payment_En : BaseEn_En
     {
-        public string UserEmail { get; set; }
+        public  int UserId { get; set; }
         public int CourseId { get; set; }
 
         [Required]

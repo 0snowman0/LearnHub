@@ -35,7 +35,10 @@ namespace LearnHub.Domain.Model.course
 
         [Required]
         [DefaultValue(1)]
-        public int NumberVideo { get; set; } 
+        public int NumberVideo { get; set; }
+
+        [Required]
+        public  int CoursePrice { get; set; }
 
         [NotMapped]
         public IFormFile? ImageFile { get; set; }
