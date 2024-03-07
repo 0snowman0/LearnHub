@@ -21,4 +21,9 @@
     <ProjectReference Include="..\LearnHub.Domain\LearnHub.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Admin\Handlers\Queries\" />
+    <Folder Include="Features\Admin\Requests\Queries\" />
+  </ItemGroup>
+
 </Project>

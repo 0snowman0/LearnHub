@@ -13,5 +13,10 @@ namespace LearnHub.Persistence.Repositories.FinancialSector
         {
             _context = context;
         }
+
+        public Task<CoursePpurchased_En?> GetWithCourseId(int courseId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

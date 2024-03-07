@@ -31,7 +31,7 @@ namespace LearnHub.Api.Controllers.FinancialSector
         #region Get
 
         [HttpGet("BuyCourse/{CourseId}")]
-        public async Task<ActionResult<BaseCommandResponse>> BuyCpurse(int CourseId)
+        public async Task<ActionResult<BaseCommandResponse>> BuyCourse(int CourseId)
         {
 
             string Email = _userService.GetEmail();
@@ -63,11 +63,5 @@ namespace LearnHub.Api.Controllers.FinancialSector
         }
 
         #endregion
-
-
-
-
-
-
     }
 }

@@ -40,6 +40,7 @@ namespace LearnHub.Domain.Model.course
         [Required]
         public  int CoursePrice { get; set; }
 
+
         [NotMapped]
         public IFormFile? ImageFile { get; set; }
     }

@@ -28,6 +28,12 @@
     <Folder Include="Features\AAA\Handlers\Queries\" />
     <Folder Include="Features\AAA\Requests\Commands\" />
     <Folder Include="Features\AAA\Requests\Queries\" />
+    <Folder Include="Features\Admin\Comment\Handlers\Commands\" />
+    <Folder Include="Features\Admin\Comment\Requests\Commands\" />
+    <Folder Include="Features\Admin\course\Handlers\Queries\" />
+    <Folder Include="Features\Admin\course\Requests\Queries\" />
+    <Folder Include="Features\Admin\Financial\Handlers\Commands\" />
+    <Folder Include="Features\Admin\Financial\Requests\Commands\" />
     <Folder Include="Features\Payment\Handlers\Commands\" />
     <Folder Include="Features\Payment\Handlers\Queries\" />
     <Folder Include="Model\" />
