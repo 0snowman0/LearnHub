@@ -1,6 +1,10 @@
 ﻿using LearnHub.Domain.Model.Comment;
 using LearnHub.Domain.Model.course;
 using LearnHub.Domain.Model.FinancialSector;
+using LearnHub.Domain.Model.Permistion;
+using LearnHub.Domain.Model.Prifile.Admin;
+using LearnHub.Domain.Model.Prifile.Student;
+using LearnHub.Domain.Model.Prifile.Teacher;
 using LearnHub.Domain.Model.Support;
 using LearnHub.Identity.Model.En;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +36,11 @@ namespace LearnHub.Persistence
         public  DbSet<SubCourse_En> subCourse_Ens  { get; set; }
         public  DbSet<Comment_En> comment_Ens  { get; set; }
         public  DbSet<CoursePpurchased_En> coursePpurchased_Ens { get; set; }
+
+        public  DbSet<Permistion_En> permistion_Ens { get; set; }
+        public  DbSet<AdminProfile_En> adminProfile_Ens { get; set; }
+        public  DbSet<StudentProfile_En> studentProfile_Ens { get; set; }
+        public  DbSet<TeacherProfile_En> teacherProfile_Ens { get; set; }
 
     }
 }
