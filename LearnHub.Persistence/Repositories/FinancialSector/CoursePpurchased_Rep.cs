@@ -1,6 +1,7 @@
 ﻿using LearnHub.Application.Contracts.FinancialSector;
 using LearnHub.Domain.Model.FinancialSector;
 using LearnHub.Persistence.Repositories.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearnHub.Persistence.Repositories.FinancialSector
 {
@@ -14,9 +15,9 @@ namespace LearnHub.Persistence.Repositories.FinancialSector
             _context = context;
         }
 
-        public Task<CoursePpurchased_En?> GetWithCourseId(int courseId)
+        public async Task<CoursePpurchased_En?> GetWithCourseId(int courseId)
         {
-            throw new NotImplementedException();
+            return await _context.coursePpurchased_Ens.Where(p => p.CourseId == courseId).FirstOrDefaultAsync();
         }
     }
 }

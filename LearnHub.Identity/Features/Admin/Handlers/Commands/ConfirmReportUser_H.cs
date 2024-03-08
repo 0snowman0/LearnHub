@@ -42,7 +42,7 @@ namespace LearnHub.Identity.Features.Admin.Handlers.Commands
                     responce.Errors = new List<string> { $"not found user with id:{comment.Id}" };
                     return responce;
                 }
-                user.IsReport = false;
+                user.IsReport = true;
             }
             await _user.SaveAsync();
 

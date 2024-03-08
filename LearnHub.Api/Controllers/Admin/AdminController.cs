@@ -47,7 +47,7 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpPost("Confirm/Report/User")]
         public async Task<ActionResult<BaseCommandResponse>> ConfirmReportUser(List<int> CommentIds)
         {
-            var command = new ConfirmReportUser_R { };
+            var command = new ConfirmReportUser_R {CommentId = CommentIds };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -55,9 +55,11 @@ namespace LearnHub.Api.Controllers.Admin
 
 
         [HttpPost("Releas/Report/User")]
-        public async Task<ActionResult<BaseCommandResponse>> ReleasReportUser(List<int> CommentIds)
+        public async Task<ActionResult<BaseCommandResponse>> ReleasReportUser(string Email)
         {
-            var command = new ReleasReport_R { };
+            var user = await _user.GetUserByEmail(Email);
+
+            var command = new ReleasReport_R { user = user};
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -73,7 +75,7 @@ namespace LearnHub.Api.Controllers.Admin
         public async Task<ActionResult<BaseCommandResponse>> ApprovalCourse(List<int> CourseIds)
         {
 
-            var command = new CourseApproval_R { };
+            var command = new CourseApproval_R {CourseIds = CourseIds };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -84,7 +86,7 @@ namespace LearnHub.Api.Controllers.Admin
         public async Task<ActionResult<BaseCommandResponse>> NotApprovalCourse(List<int> CourseIds)
         {
 
-            var command = new NotApprovalCourse_R { };
+            var command = new NotApprovalCourse_R { CourseIds = CourseIds };
             var response = await _mediator.Send(command);
 
             return Ok(response);

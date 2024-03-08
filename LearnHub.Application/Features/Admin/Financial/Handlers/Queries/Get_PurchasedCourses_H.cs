@@ -48,7 +48,7 @@ namespace LearnHub.Application.Features.Admin.Financial.Handlers.Queries
             {
                 CourseId = request.CourseId,
                 CourseName = course.CourseName,
-                TeacherName = request.TeacherName
+                TeacherName = await _course.ReturnTeacherName(request.CourseId)
             };
 
 

@@ -21,5 +21,14 @@ namespace LearnHub.Persistence.Repositories.course
         {
             return await _context.course_Ens.Where(p => p.TeacherId == TeacherId).ToListAsync();
         }
+
+        public async Task<string> ReturnTeacherName(int CourseId)
+        {
+            int TeacherId =
+                await _context.course_Ens.Where(p => p.Id == CourseId).Select(p=>p.TeacherId).FirstOrDefaultAsync();
+
+            return await _context.user_Ens.Where(p => p.Id == TeacherId).Select(p => p.Username).FirstOrDefaultAsync();
+
+        }
     }
 }

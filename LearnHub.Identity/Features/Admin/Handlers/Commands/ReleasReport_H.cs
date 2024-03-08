@@ -23,29 +23,16 @@ namespace LearnHub.Identity.Features.Admin.Handlers.Commands
         {
             var responce = new BaseCommandResponse();
 
-            var comment = new Comment_En();
-            var user = new User_En();
+            var user = request.user;
 
-            foreach(var commentId in request.CommentId)
+            if(user == null) 
             {
-                comment = await _comment.Get(commentId);
-                if(comment == null)
-                {
-                    responce.NotFound();
-                    responce.Errors = new List<string> { $"not found comment with id:{commentId}"};
-                    return responce;
-                }
-                user = await _user.Get(comment.UserId);
-                if(user == null)
-                {
-                    responce.NotFound();
-                    responce.Errors = new List<string> { $"not found user with id:{comment.Id}" };
-                    return responce;
-                }
-                user.IsReport = true;
+                responce.NotFound();
+                return responce;
             }
-            await _user.SaveAsync();
 
+            user.IsReport = false;
+            await _user.SaveAsync();
 
             responce.Success();
             return responce;
