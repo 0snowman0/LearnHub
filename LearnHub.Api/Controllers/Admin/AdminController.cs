@@ -4,7 +4,7 @@ using LearnHub.Application.Features.Admin.Financial.Handlers.Queries;
 using LearnHub.Application.Features.Admin.Financial.Requests.Queries;
 using LearnHub.Application.Features.SupportAdmin.Requests.Queries;
 using LearnHub.Application.Responses;
-using LearnHub.Identity.Features.Admin.Requests.Commands;
+using LearnHub.Identity.Features.profile.Admin.Requests.Commands;
 using LearnHub.Identity.IdentityService.Abstract;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

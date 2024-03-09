@@ -1,12 +1,12 @@
 ﻿using LearnHub.Application.Contracts.comment;
 using LearnHub.Application.Responses;
 using LearnHub.Domain.Model.Comment;
-using LearnHub.Identity.Features.Admin.Requests.Commands;
+using LearnHub.Identity.Features.profile.Admin.Requests.Commands;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.En;
 using MediatR;
 
-namespace LearnHub.Identity.Features.Admin.Handlers.Commands
+namespace LearnHub.Identity.Features.profile.Admin.Handlers.Commands
 {
     public class ConfirmReportUser_H : IRequestHandler<ConfirmReportUser_R, BaseCommandResponse>
     {

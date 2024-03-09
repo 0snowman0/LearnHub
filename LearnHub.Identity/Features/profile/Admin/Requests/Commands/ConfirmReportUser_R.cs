@@ -1,7 +1,7 @@
 ﻿using LearnHub.Application.Responses;
 using MediatR;
 
-namespace LearnHub.Identity.Features.Admin.Requests.Commands
+namespace LearnHub.Identity.Features.profile.Admin.Requests.Commands
 {
     public class ConfirmReportUser_R : IRequest<BaseCommandResponse>
     {

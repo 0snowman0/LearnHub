@@ -4,12 +4,15 @@ using LearnHub.Application.Dto.Course.course.command;
 using LearnHub.Application.Dto.Course.course.Queries;
 using LearnHub.Application.Dto.Course.subcourse.command;
 using LearnHub.Application.Dto.Course.subcourse.Queries;
+using LearnHub.Application.Dto.Financial.Payment.Queries;
+using LearnHub.Application.Dto.profile.Student.command;
 using LearnHub.Application.Dto.Support.SupportAdmin.command;
 using LearnHub.Application.Dto.Support.SupportAdmin.Queries;
 using LearnHub.Application.Dto.Support.SupportStudent.command;
 using LearnHub.Application.Dto.Support.SupportStudent.Queries;
 using LearnHub.Domain.Model.Comment;
 using LearnHub.Domain.Model.course;
+using LearnHub.Domain.Model.FinancialSector;
 using LearnHub.Domain.Model.Support;
 
 namespace LearnHub.Application.Profile
@@ -74,6 +77,13 @@ namespace LearnHub.Application.Profile
             CreateMap<SubCourse_En , Update_SubCourse_Dto>().ReverseMap();
 
             CreateMap<SubCourse_En , UpdateVedio_SubCourse_Dto>().ReverseMap();
+            #endregion
+
+            
+            #region Payment 
+
+            CreateMap<Payment_En,Get_Payment_Dto>().ReverseMap();
+
             #endregion
         }
     }

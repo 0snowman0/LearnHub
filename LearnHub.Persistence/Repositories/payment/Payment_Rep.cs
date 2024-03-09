@@ -19,5 +19,10 @@ namespace LearnHub.Persistence.Repositories.payment
         {
             return await _context.payment_Ens.FirstOrDefaultAsync(p => p.TrackingCode == TrackingCode);
         }
+
+        public async Task<List<Payment_En>?> GetPaymeentWithUserId(int UserId)
+        {
+            return await _context.payment_Ens.Where(p => p.UserId == UserId).ToListAsync();
+        }
     }
 }

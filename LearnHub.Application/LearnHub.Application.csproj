@@ -22,6 +22,15 @@
     <Folder Include="Dto\AAA\common\" />
     <Folder Include="Dto\AAA\command\" />
     <Folder Include="Dto\AAA\Queries\" />
+    <Folder Include="Dto\Financial\Payment\command\" />
+    <Folder Include="Dto\Financial\Payment\common\" />
+    <Folder Include="Dto\profile\Admin\command\" />
+    <Folder Include="Dto\profile\Admin\common\" />
+    <Folder Include="Dto\profile\Admin\Queries\" />
+    <Folder Include="Dto\profile\Student\common\" />
+    <Folder Include="Dto\profile\Teacher\command\" />
+    <Folder Include="Dto\profile\Teacher\common\" />
+    <Folder Include="Dto\profile\Teacher\Queries\" />
     <Folder Include="Dto\store\common\" />
     <Folder Include="Dto\store\Queries\" />
     <Folder Include="Features\AAA\Handlers\Commands\" />
@@ -36,6 +45,12 @@
     <Folder Include="Features\Admin\Financial\Requests\Commands\" />
     <Folder Include="Features\Payment\Handlers\Commands\" />
     <Folder Include="Features\Payment\Handlers\Queries\" />
+    <Folder Include="Features\Profile\Admin\Handlers\Commands\" />
+    <Folder Include="Features\Profile\Admin\Handlers\Queries\" />
+    <Folder Include="Features\Profile\Admin\Requests\Commands\" />
+    <Folder Include="Features\Profile\Admin\Requests\Queries\" />
+    <Folder Include="Features\Profile\Student\Handlers\Commands\" />
+    <Folder Include="Features\Profile\Student\Requests\Commands\" />
     <Folder Include="Model\" />
     <Folder Include="Validation\" />
   </ItemGroup>

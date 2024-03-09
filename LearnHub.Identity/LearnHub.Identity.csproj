@@ -22,8 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Admin\Handlers\Queries\" />
-    <Folder Include="Features\Admin\Requests\Queries\" />
+    <Folder Include="Features\profile\Admin\Handlers\Queries\" />
+    <Folder Include="Features\profile\Admin\Requests\Queries\" />
+    <Folder Include="Features\profile\Student\Handlers\Queries\" />
+    <Folder Include="Features\profile\Student\Requests\Queries\" />
   </ItemGroup>
 
 </Project>

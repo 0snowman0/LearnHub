@@ -1,12 +1,12 @@
 ﻿using LearnHub.Application.Contracts.comment;
 using LearnHub.Application.Responses;
 using LearnHub.Domain.Model.Comment;
-using LearnHub.Identity.Features.Admin.Requests.Commands;
+using LearnHub.Identity.Features.profile.Admin.Requests.Commands;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.En;
 using MediatR;
 
-namespace LearnHub.Identity.Features.Admin.Handlers.Commands
+namespace LearnHub.Identity.Features.profile.Admin.Handlers.Commands
 {
     public class ReleasReport_H : IRequestHandler<ReleasReport_R, BaseCommandResponse>
     {
@@ -25,7 +25,7 @@ namespace LearnHub.Identity.Features.Admin.Handlers.Commands
 
             var user = request.user;
 
-            if(user == null) 
+            if (user == null)
             {
                 responce.NotFound();
                 return responce;

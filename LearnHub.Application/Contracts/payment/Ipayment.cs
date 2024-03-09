@@ -6,5 +6,6 @@ namespace LearnHub.Application.Contracts.payment
     public interface Ipayment : IGenericRepository<Payment_En>
     {
         Task<Payment_En?> GetPaymeentWithTrackingCode(string TrackingCode);
+        Task<List<Payment_En>?> GetPaymeentWithUserId(int UserId);
     }
 }
