@@ -42,6 +42,8 @@
     <Folder Include="Features\Admin\Financial\Requests\Commands\" />
     <Folder Include="Features\Payment\Handlers\Commands\" />
     <Folder Include="Features\Payment\Handlers\Queries\" />
+    <Folder Include="Features\Permistion\Handlers\Commands\" />
+    <Folder Include="Features\Permistion\Requests\Commands\" />
     <Folder Include="Features\Profile\Admin\Handlers\Commands\" />
     <Folder Include="Features\Profile\Admin\Handlers\Queries\" />
     <Folder Include="Features\Profile\Admin\Requests\Commands\" />

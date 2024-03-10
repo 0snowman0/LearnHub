@@ -2,13 +2,16 @@
 using LearnHub.Application.Features.Admin.course.Requests.Commands;
 using LearnHub.Application.Features.Admin.Financial.Handlers.Queries;
 using LearnHub.Application.Features.Admin.Financial.Requests.Queries;
+using LearnHub.Application.Features.Permistion.Requests.Queries;
 using LearnHub.Application.Features.SupportAdmin.Requests.Queries;
 using LearnHub.Application.Responses;
+using LearnHub.Domain.Model.Comment;
 using LearnHub.Identity.Features.profile.Admin.Requests.Commands;
 using LearnHub.Identity.IdentityService.Abstract;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace LearnHub.Api.Controllers.Admin
 {
@@ -34,6 +37,18 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpGet("ReportComment")]
         public async Task<ActionResult<BaseCommandResponse>> GetReportComment()
         {
+            string Email = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email);
+
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user.Id, PermistionType = new Comment_En() };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
+
             var command = new GetReportComment_R { };
             var response = await _mediator.Send(command);
 
@@ -44,6 +59,18 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpPost("Confirm/Report/User")]
         public async Task<ActionResult<BaseCommandResponse>> ConfirmReportUser(List<int> CommentIds)
         {
+            string Email = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email);
+
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user.Id, PermistionType = new Comment_En() };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
+
             var command = new ConfirmReportUser_R { CommentId = CommentIds };
             var response = await _mediator.Send(command);
 
@@ -54,9 +81,20 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpPost("Releas/Report/User")]
         public async Task<ActionResult<BaseCommandResponse>> ReleasReportUser(string Email)
         {
-            var user = await _user.GetUserByEmail(Email);
+            string Email1 = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email1);
 
-            var command = new ReleasReport_R { user = user };
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user.Id, PermistionType = new Comment_En() };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
+            var userEmail = await _user.GetUserByEmail(Email);
+
+            var command = new ReleasReport_R { user = userEmail };
             var response = await _mediator.Send(command);
 
             return Ok(response);
