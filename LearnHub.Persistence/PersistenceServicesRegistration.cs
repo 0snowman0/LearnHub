@@ -52,7 +52,11 @@ namespace LearnHub.Persistence
 
 
             services.AddScoped<Ipayment, Payment_Rep>();
+
             services.AddScoped<IProfileStudent,ProfileStudent_Rep>();
+
+            services.AddScoped<IProfileTeacher,ProfileTeacher_Rep>();
+
 
 
             services.AddScoped<ISupportStudent , SupportStudent_Rep>();

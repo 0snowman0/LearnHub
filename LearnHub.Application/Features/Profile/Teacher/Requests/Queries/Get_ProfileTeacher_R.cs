@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper.Configuration.Conventions;
+using LearnHub.Application.Responses;
+using MediatR;
 
 namespace LearnHub.Application.Features.Profile.Teacher.Requests.Queries
 {
-    internal class Get_ProfileTeacher_R
+    public class Get_ProfileTeacher_R : IRequest<BaseCommandResponse>
     {
+        public  int UserId { get; set; }
+        public string UserName { get; set; } = null!;
     }
 }

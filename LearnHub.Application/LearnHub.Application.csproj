@@ -28,9 +28,6 @@
     <Folder Include="Dto\profile\Admin\common\" />
     <Folder Include="Dto\profile\Admin\Queries\" />
     <Folder Include="Dto\profile\Student\common\" />
-    <Folder Include="Dto\profile\Teacher\command\" />
-    <Folder Include="Dto\profile\Teacher\common\" />
-    <Folder Include="Dto\profile\Teacher\Queries\" />
     <Folder Include="Dto\store\common\" />
     <Folder Include="Dto\store\Queries\" />
     <Folder Include="Features\AAA\Handlers\Commands\" />

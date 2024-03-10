@@ -6,6 +6,8 @@ using LearnHub.Application.Dto.Course.subcourse.command;
 using LearnHub.Application.Dto.Course.subcourse.Queries;
 using LearnHub.Application.Dto.Financial.Payment.Queries;
 using LearnHub.Application.Dto.profile.Student.command;
+using LearnHub.Application.Dto.profile.Teacher.command;
+using LearnHub.Application.Dto.profile.Teacher.Queries;
 using LearnHub.Application.Dto.Support.SupportAdmin.command;
 using LearnHub.Application.Dto.Support.SupportAdmin.Queries;
 using LearnHub.Application.Dto.Support.SupportStudent.command;
@@ -13,6 +15,7 @@ using LearnHub.Application.Dto.Support.SupportStudent.Queries;
 using LearnHub.Domain.Model.Comment;
 using LearnHub.Domain.Model.course;
 using LearnHub.Domain.Model.FinancialSector;
+using LearnHub.Domain.Model.Prifile.Teacher;
 using LearnHub.Domain.Model.Support;
 
 namespace LearnHub.Application.Profile
@@ -85,6 +88,20 @@ namespace LearnHub.Application.Profile
             CreateMap<Payment_En,Get_Payment_Dto>().ReverseMap();
 
             #endregion
+
+            #region Profile
+
+            #region Teacher
+
+            CreateMap<TeacherProfile_En, Create_ProfileTeacher_Dto>().ReverseMap();
+
+            CreateMap<TeacherProfile_En, Get_ProfileTeacher_Dto>().ReverseMap();
+
+            #endregion
+
+
+            #endregion
+
         }
     }
 }

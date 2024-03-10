@@ -8,7 +8,7 @@ using MediatR;
 
 namespace LearnHub.Application.Features.Profile.Student.Handlers.Queries
 {
-    public class Get_ProfileStudent_H : IRequestHandler<Get_ProfileStudent_R, BaseCommandResponse>
+    public class Get_ProfileStudent_H : IRequestHandler<Create_ProfileStudent_R, BaseCommandResponse>
     {
         private readonly IMapper _mapper;
         private readonly Ipayment _payment;
@@ -25,7 +25,7 @@ namespace LearnHub.Application.Features.Profile.Student.Handlers.Queries
             _profileStudent = profileStudent;
         }
 
-        public async Task<BaseCommandResponse> Handle(Get_ProfileStudent_R request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(Create_ProfileStudent_R request, CancellationToken cancellationToken)
         {
             var responce = new BaseCommandResponse();
 
