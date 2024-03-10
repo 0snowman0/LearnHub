@@ -1,4 +1,5 @@
-﻿using LearnHub.Application.Dto.Permistion.Queries;
+﻿using LearnHub.Application.Dto.Permistion.command;
+using LearnHub.Application.Dto.Permistion.Queries;
 using LearnHub.Identity.Enum;
 
 namespace LearnHub.Identity.Model.Dto
@@ -11,6 +12,6 @@ namespace LearnHub.Identity.Model.Dto
         public Gender_Em gender_Em { get; set; }
         public  Role_Em  role_Em { get; set; }
 
-        public  ICollection<Permistion_Dto> permistion_Dtos { get; set; } = new List<Permistion_Dto>();
+        public  Create_Permistion_Dto permistion_Dtos { get; set; } = new Create_Permistion_Dto();
     }
 }

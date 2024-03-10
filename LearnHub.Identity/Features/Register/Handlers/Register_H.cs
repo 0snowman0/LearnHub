@@ -1,4 +1,5 @@
-﻿using LearnHub.Domain.Enum;
+﻿using LearnHub.Application.Responses;
+using LearnHub.Domain.Enum;
 using LearnHub.Identity.Features.Register.Requests;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.En;
@@ -8,7 +9,7 @@ using System.Security.Cryptography;
 
 namespace LearnHub.Identity.Features.Register.Handlers
 {
-    public class Register_H : IRequestHandler<Register_R, User_En>
+    public class Register_H : IRequestHandler<Register_R, BaseCommandResponse>
     {
         public static User_En user = new User_En();
         private readonly IConfiguration _configuration;
@@ -19,8 +20,11 @@ namespace LearnHub.Identity.Features.Register.Handlers
             _user = user;
         }
 
-        public async Task<User_En> Handle(Register_R request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(Register_R request, CancellationToken cancellationToken)
         {
+            var responce = new BaseCommandResponse();
+
+
             CreatePasswordHash(request.register_Dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
 
@@ -32,7 +36,8 @@ namespace LearnHub.Identity.Features.Register.Handlers
 
             await _user.Add(user);
 
-            return user;
+            responce.Success(user);
+            return responce;
         }
 
 

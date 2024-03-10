@@ -29,11 +29,10 @@ namespace LearnHub.Api.Controllers.Identity
             return responce;
         }
 
-
-        [HttpPost("register")]
-        public async Task<ActionResult<User_En>> Register(Register_Dto request)
+        [HttpPost("Regitster")]
+        public async Task<ActionResult<BaseCommandResponse>> Register([FromForm] Register_Dto register_Dto)
         {
-            var responce = await _mediator.Send(new Register_R { register_Dto = request });
+            var responce = await _mediator.Send(new Register_R { register_Dto = register_Dto });
             return responce;
         }
 

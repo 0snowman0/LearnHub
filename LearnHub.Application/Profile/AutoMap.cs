@@ -5,6 +5,8 @@ using LearnHub.Application.Dto.Course.course.Queries;
 using LearnHub.Application.Dto.Course.subcourse.command;
 using LearnHub.Application.Dto.Course.subcourse.Queries;
 using LearnHub.Application.Dto.Financial.Payment.Queries;
+using LearnHub.Application.Dto.Permistion.command;
+using LearnHub.Application.Dto.Permistion.Queries;
 using LearnHub.Application.Dto.profile.Student.command;
 using LearnHub.Application.Dto.profile.Teacher.command;
 using LearnHub.Application.Dto.profile.Teacher.Queries;
@@ -15,6 +17,7 @@ using LearnHub.Application.Dto.Support.SupportStudent.Queries;
 using LearnHub.Domain.Model.Comment;
 using LearnHub.Domain.Model.course;
 using LearnHub.Domain.Model.FinancialSector;
+using LearnHub.Domain.Model.Permistion;
 using LearnHub.Domain.Model.Prifile.Teacher;
 using LearnHub.Domain.Model.Support;
 
@@ -102,6 +105,17 @@ namespace LearnHub.Application.Profile
 
             #endregion
 
+
+            #endregion
+
+
+            #region Permistion
+
+            CreateMap<Permistion_En, Permistion_Dto>().ReverseMap();
+
+            CreateMap<Permistion_En, Create_Permistion_Dto>().ReverseMap();
+
+            CreateMap<Permistion_En, Update_Permistion_Dto>().ReverseMap();
 
             #endregion
 
