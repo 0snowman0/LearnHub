@@ -39,7 +39,7 @@ namespace LearnHub.Api.Controllers.Profile.Teacher
             var user = await _user.GetUserByEmail(Email);
 
 
-            var command = new Get_ProfileTeacher_R { UserId = user.Id , UserName = user.Username};
+            var command = new Get_ProfileTeacher_R { UserId = user.Id, UserName = user.Username };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -50,15 +50,15 @@ namespace LearnHub.Api.Controllers.Profile.Teacher
 
         #region Post
 
-        [HttpPost]
+        [HttpPost("CreateProfileTeacher")]
         public async Task<ActionResult<BaseCommandResponse>> CreateProfileTeacher
-            ([FromForm]Create_ProfileTeacher_Dto create_ProfileTeacher)
+            ([FromForm] Create_ProfileTeacher_Dto create_ProfileTeacher)
         {
             string Email = _userService.GetEmail();
             var user = await _user.GetUserByEmail(Email);
 
 
-            var command = new Create_ProfileTeacher_R {create_ProfileTeacher_Dto = create_ProfileTeacher, UserId = user.Id };
+            var command = new Create_ProfileTeacher_R { create_ProfileTeacher_Dto = create_ProfileTeacher, UserId = user.Id };
             var response = await _mediator.Send(command);
 
             return Ok(response);

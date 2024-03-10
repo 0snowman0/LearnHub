@@ -35,7 +35,7 @@ namespace LearnHub.Api.Controllers.Profile.Student
             var user = await _user.GetUserByEmail(Email);
 
 
-            var command = new Create_ProfileStudent_R{UserId = user.Id };
+            var command = new Create_ProfileStudent_R { UserId = user.Id };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -51,7 +51,7 @@ namespace LearnHub.Api.Controllers.Profile.Student
             var user = await _user.GetUserByEmail(Email);
 
 
-            var command = new Update_ProfileStudent_R {update_ProfileStudent = update_ProfileStudent_Dto , UserId = user.Id };
+            var command = new Update_ProfileStudent_R { update_ProfileStudent = update_ProfileStudent_Dto, UserId = user.Id };
             var response = await _mediator.Send(command);
 
             return Ok(response);

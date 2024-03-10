@@ -38,7 +38,7 @@ namespace LearnHub.Api.Controllers.FinancialSector
             var user = await _user.GetUserByEmail(Email);
 
 
-            var command = new BuyCourse_R {CourseId = CourseId , UserId = user.Id };
+            var command = new BuyCourse_R { CourseId = CourseId, UserId = user.Id };
             var response = await _mediator.Send(command);
 
             return Ok(response);

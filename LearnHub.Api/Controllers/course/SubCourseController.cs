@@ -51,7 +51,7 @@ namespace LearnHub.Api.Controllers.course
             return Ok(response);
         }
 
-        
+
         #endregion
 
 
@@ -65,7 +65,7 @@ namespace LearnHub.Api.Controllers.course
             var user = await _user.GetUserByEmail(Email);
 
             var command = new Create_SubCourse_R
-            { create_SubCourse = create_SubCourse_Dto};
+            { create_SubCourse = create_SubCourse_Dto };
 
             var response = await _mediator.Send(command);
 
@@ -106,7 +106,7 @@ namespace LearnHub.Api.Controllers.course
 
         [HttpPut("Update/SubCourse/Vedio")]
         public async Task<ActionResult<BaseCommandResponse>> UpdateVideo
-            ([FromForm]UpdateVedio_SubCourse_Dto update_SubCourse)
+            ([FromForm] UpdateVedio_SubCourse_Dto update_SubCourse)
         {
 
             var command = new UpdateVideo_SubCourse_R { updateVideo_SubCourse = update_SubCourse };

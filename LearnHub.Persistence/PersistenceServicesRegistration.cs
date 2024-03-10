@@ -3,6 +3,7 @@ using LearnHub.Application.Contracts.Course;
 using LearnHub.Application.Contracts.FinancialSector;
 using LearnHub.Application.Contracts.Generic;
 using LearnHub.Application.Contracts.payment;
+using LearnHub.Application.Contracts.permistion;
 using LearnHub.Application.Contracts.Profile;
 using LearnHub.Application.Contracts.Support.SupportAdmin;
 using LearnHub.Application.Contracts.Support.SupportStudent;
@@ -14,6 +15,7 @@ using LearnHub.Persistence.Repositories.FinancialSector;
 using LearnHub.Persistence.Repositories.Generic;
 using LearnHub.Persistence.Repositories.Identity;
 using LearnHub.Persistence.Repositories.payment;
+using LearnHub.Persistence.Repositories.Permistion;
 using LearnHub.Persistence.Repositories.Profile;
 using LearnHub.Persistence.Repositories.Support;
 using LearnHub.Persistence.Tools;
@@ -38,6 +40,7 @@ namespace LearnHub.Persistence
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 
+            services.AddScoped<IAdminProfile, AdminProfile_Rep>();
 
             services.AddScoped<ICoursePpurchased, CoursePpurchased_Rep>();
 
@@ -56,6 +59,10 @@ namespace LearnHub.Persistence
             services.AddScoped<IProfileStudent,ProfileStudent_Rep>();
 
             services.AddScoped<IProfileTeacher,ProfileTeacher_Rep>();
+
+            services.AddScoped<IPermistion,Permistion_Rep>();
+
+
 
 
 

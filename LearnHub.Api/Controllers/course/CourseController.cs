@@ -67,7 +67,7 @@ namespace LearnHub.Api.Controllers.course
 
         [HttpPost("Create/Course")]
         public async Task<ActionResult<BaseCommandResponse>> Create
-            ([FromForm]Create_Course_Dto create_Course_Dto)
+            ([FromForm] Create_Course_Dto create_Course_Dto)
         {
             string Email = _userService.GetEmail();
             var user = await _user.GetUserByEmail(Email);

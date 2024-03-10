@@ -1,4 +1,5 @@
-﻿using LearnHub.Identity.Features.Login.Requests;
+﻿using LearnHub.Application.Responses;
+using LearnHub.Identity.Features.Login.Requests;
 using LearnHub.Identity.Features.Register.Requests;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.Dto;
@@ -40,6 +41,14 @@ namespace LearnHub.Api.Controllers.Identity
         public async Task<ActionResult<string>> Login(Login_Dto request)
         {
             var responce = await _mediator.Send(new Login_R { login_Dto = request });
+            return responce;
+        }
+
+
+        [HttpPost("registerAdmin")]
+        public async Task<ActionResult<BaseCommandResponse>> RegisterAdmin(RegisterAdmin_Dto request)
+        {
+            var responce = await _mediator.Send(new RegisterAdmin_R { registerAdmin = request });
             return responce;
         }
     }

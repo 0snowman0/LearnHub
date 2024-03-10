@@ -1,4 +1,5 @@
-﻿using LearnHub.Identity.Features.Register.Requests;
+﻿using LearnHub.Domain.Enum;
+using LearnHub.Identity.Features.Register.Requests;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.En;
 using MediatR;
@@ -22,10 +23,12 @@ namespace LearnHub.Identity.Features.Register.Handlers
         {
             CreatePasswordHash(request.register_Dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
+
             user.Email = request.register_Dto.Email;
             user.Username = request.register_Dto.UserName;
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
+            user.role_Em = (LearnHub.Domain.Enum.Role_Em)request.register_Dto.role;
 
             await _user.Add(user);
 

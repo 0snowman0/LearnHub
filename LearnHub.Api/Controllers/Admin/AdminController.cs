@@ -29,9 +29,6 @@ namespace LearnHub.Api.Controllers.Admin
             _user = user;
         }
 
-
-
-
         #region Comment
 
         [HttpGet("ReportComment")]
@@ -47,7 +44,7 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpPost("Confirm/Report/User")]
         public async Task<ActionResult<BaseCommandResponse>> ConfirmReportUser(List<int> CommentIds)
         {
-            var command = new ConfirmReportUser_R {CommentId = CommentIds };
+            var command = new ConfirmReportUser_R { CommentId = CommentIds };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -59,7 +56,7 @@ namespace LearnHub.Api.Controllers.Admin
         {
             var user = await _user.GetUserByEmail(Email);
 
-            var command = new ReleasReport_R { user = user};
+            var command = new ReleasReport_R { user = user };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -75,7 +72,7 @@ namespace LearnHub.Api.Controllers.Admin
         public async Task<ActionResult<BaseCommandResponse>> ApprovalCourse(List<int> CourseIds)
         {
 
-            var command = new CourseApproval_R {CourseIds = CourseIds };
+            var command = new CourseApproval_R { CourseIds = CourseIds };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -98,7 +95,7 @@ namespace LearnHub.Api.Controllers.Admin
 
         #region FinanCial
 
-        [HttpGet("GetAll_PurchasedCourses")] 
+        [HttpGet("GetAll_PurchasedCourses")]
         public async Task<ActionResult<BaseCommandResponse>> PurchasedCourses()
         {
 
@@ -109,14 +106,14 @@ namespace LearnHub.Api.Controllers.Admin
         }
 
 
-        [HttpGet("Get_PurchasedCourses/{CourseId}")] 
+        [HttpGet("Get_PurchasedCourses/{CourseId}")]
         public async Task<ActionResult<BaseCommandResponse>> PurchasedCourses(int CourseId)
         {
 
             string Email = _userService.GetEmail();
             var user = await _user.GetUserByEmail(Email);
 
-            var command = new Get_PurchasedCourses_R {CourseId = CourseId , TeacherName = user.Username };
+            var command = new Get_PurchasedCourses_R { CourseId = CourseId, TeacherName = user.Username };
             var response = await _mediator.Send(command);
 
             return Ok(response);
@@ -124,6 +121,9 @@ namespace LearnHub.Api.Controllers.Admin
 
 
         #endregion
+
+
+
 
     }
 }
