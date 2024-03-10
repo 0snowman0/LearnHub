@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LearnHub.Application.Dto.profile.Student.command;
+using LearnHub.Application.Dto.profile.Teacher.command;
+using LearnHub.Application.Responses;
+using MediatR;
 
 namespace LearnHub.Application.Features.Profile.Teacher.Requests.Commands
 {
-    internal class Update_ProfileTeacher_R
+    public class Update_ProfileTeacher_R : IRequest<BaseCommandResponse>
     {
+        public Update_ProfileTeacher_Dto update_ProfileTeacher { get; set; } = null!;
+        public  int UserId { get; set; }
     }
 }

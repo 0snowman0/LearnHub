@@ -1,4 +1,5 @@
-﻿using LearnHub.Application.Dto.profile.Teacher.command;
+﻿using LearnHub.Application.Dto.profile.Student.command;
+using LearnHub.Application.Dto.profile.Teacher.command;
 using LearnHub.Application.Features.Profile.Student.Requests.Queries;
 using LearnHub.Application.Features.Profile.Teacher.Handlers.Commands;
 using LearnHub.Application.Features.Profile.Teacher.Requests.Commands;
@@ -58,6 +59,26 @@ namespace LearnHub.Api.Controllers.Profile.Teacher
 
 
             var command = new Create_ProfileTeacher_R {create_ProfileTeacher_Dto = create_ProfileTeacher, UserId = user.Id };
+            var response = await _mediator.Send(command);
+
+            return Ok(response);
+        }
+
+        #endregion
+
+
+        #region Update
+
+        [HttpPut("Update/ProfileTeacher/")]
+        public async Task<ActionResult<BaseCommandResponse>> UpdateProfileTeacher
+            (Update_ProfileTeacher_Dto update_ProfileTeacher)
+        {
+
+            string Email = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email);
+
+
+            var command = new Update_ProfileTeacher_R { update_ProfileTeacher = update_ProfileTeacher, UserId = user.Id };
             var response = await _mediator.Send(command);
 
             return Ok(response);

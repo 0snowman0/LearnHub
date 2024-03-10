@@ -97,6 +97,9 @@ namespace LearnHub.Application.Profile
 
             CreateMap<TeacherProfile_En, Get_ProfileTeacher_Dto>().ReverseMap();
 
+            CreateMap<TeacherProfile_En, Update_ProfileTeacher_Dto>()
+                .ForMember(dest=>dest.Description,opt => opt.MapFrom(src => src.Description)).ReverseMap();
+
             #endregion
 
 
