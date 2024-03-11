@@ -6,6 +6,7 @@ using LearnHub.Application.Features.Permistion.Requests.Queries;
 using LearnHub.Application.Features.SupportAdmin.Requests.Queries;
 using LearnHub.Application.Responses;
 using LearnHub.Domain.Model.Comment;
+using LearnHub.Domain.Model.course;
 using LearnHub.Identity.Features.profile.Admin.Requests.Commands;
 using LearnHub.Identity.IdentityService.Abstract;
 using MediatR;
@@ -109,6 +110,17 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpPost("Approval/Courses")]
         public async Task<ActionResult<BaseCommandResponse>> ApprovalCourse(List<int> CourseIds)
         {
+            string Email1 = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email1);
+
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user.Id, PermistionType = new Course_En() };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
 
             var command = new CourseApproval_R { CourseIds = CourseIds };
             var response = await _mediator.Send(command);
@@ -120,6 +132,17 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpPost("NotApproval/Courses")]
         public async Task<ActionResult<BaseCommandResponse>> NotApprovalCourse(List<int> CourseIds)
         {
+            string Email1 = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email1);
+
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user.Id, PermistionType = new Course_En() };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
 
             var command = new NotApprovalCourse_R { CourseIds = CourseIds };
             var response = await _mediator.Send(command);
@@ -136,6 +159,18 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpGet("GetAll_PurchasedCourses")]
         public async Task<ActionResult<BaseCommandResponse>> PurchasedCourses()
         {
+            string Email1 = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email1);
+
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user.Id, PermistionType = "other type" };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
+
 
             var command = new GetAll_PurchasedCourses_R { };
             var response = await _mediator.Send(command);
@@ -147,6 +182,19 @@ namespace LearnHub.Api.Controllers.Admin
         [HttpGet("Get_PurchasedCourses/{CourseId}")]
         public async Task<ActionResult<BaseCommandResponse>> PurchasedCourses(int CourseId)
         {
+
+            string Email1 = _userService.GetEmail();
+            var user1 = await _user.GetUserByEmail(Email1);
+
+            #region Check Permistion
+            var PermistionCommand = new CheckPermistion_R { UesrId = user1.Id, PermistionType = "other type" };
+            var Permistion = await _mediator.Send(PermistionCommand);
+
+            if (!Permistion)
+                return StatusCode(401);
+            #endregion
+
+
 
             string Email = _userService.GetEmail();
             var user = await _user.GetUserByEmail(Email);
