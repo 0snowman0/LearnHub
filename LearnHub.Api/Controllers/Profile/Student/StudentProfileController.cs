@@ -43,6 +43,22 @@ namespace LearnHub.Api.Controllers.Profile.Student
         }
 
 
+        [HttpGet("MyCourse")]
+        public async Task<ActionResult<BaseCommandResponse>> GetMyCourse()
+        {
+
+            string Email = _userService.GetEmail();
+            var user = await _user.GetUserByEmail(Email);
+
+
+            var command = new MyCourse_R { UserId = user.Id };
+            var response = await _mediator.Send(command);
+
+            return Ok(response);
+
+        }
+
+
         [HttpPut]
         public async Task<ActionResult<BaseCommandResponse>> Update_ProfileStudent
             (Update_ProfileStudent_Dto update_ProfileStudent_Dto)

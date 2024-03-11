@@ -10,6 +10,7 @@ using Swashbuckle.AspNetCore.Filters;
 using LearnHub.Application;
 using LearnHub.File;
 using ZarinPal.Class;
+using LearnHub.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -74,6 +75,8 @@ builder.Services.ConfigureIdentityServices();
 builder.Services.ConfigureApplicationServices();
 
 builder.Services.ConfigureFileServices();
+
+builder.Services.ConfigureEmailServices();
 
 #endregion
 

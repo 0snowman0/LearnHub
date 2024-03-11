@@ -6,5 +6,6 @@ namespace LearnHub.Application.Contracts.FinancialSector
     public interface ICoursePpurchased : IGenericRepository<CoursePpurchased_En>
     {
         Task<CoursePpurchased_En?> GetWithCourseId(int courseId);
+        Task<List<CoursePpurchased_En>?> GetWithUserId(int UserId);
     }
 }

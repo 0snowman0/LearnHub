@@ -19,5 +19,10 @@ namespace LearnHub.Persistence.Repositories.FinancialSector
         {
             return await _context.coursePpurchased_Ens.Where(p => p.CourseId == courseId).FirstOrDefaultAsync();
         }
+
+        public async Task<List<CoursePpurchased_En>?> GetWithUserId(int UserId)
+        {
+            return await _context.coursePpurchased_Ens.Where(p => p.Student_Id == UserId).ToListAsync();
+        }
     }
 }
