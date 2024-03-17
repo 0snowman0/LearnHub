@@ -4,6 +4,7 @@ using LearnHub.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LearnHub.Persistence.Migrations
 {
     [DbContext(typeof(Context_En))]
-    partial class Context_EnModelSnapshot : ModelSnapshot
+    [Migration("20240317084021_checl")]
+    partial class checl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -361,9 +364,6 @@ namespace LearnHub.Persistence.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Gender_Em")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsReport")
                         .HasColumnType("bit");

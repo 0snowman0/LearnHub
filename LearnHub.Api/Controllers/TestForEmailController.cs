@@ -1,5 +1,8 @@
 ﻿using LearnHub.Email;
+using LearnHub.Email.Features.Requests.Commands;
 using LearnHub.Email.Model;
+using LearnHub.Identity.Features.Login.Requests;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,17 +14,28 @@ namespace LearnHub.Api.Controllers
     {
 
         private readonly IEmailService _emailService;
-
-        public TestForEmailController(IEmailService emailService)
+        private readonly IMediator _mediator;
+        public TestForEmailController(IEmailService emailService, IMediator mediator)
         {
             _emailService = emailService;
+            _mediator = mediator;
         }
 
-        [HttpPost]
+
+        [HttpPost("med")]
         public IActionResult SendEmail(EmailDto request)
         {
             _emailService.SendEmail(request);
             return Ok();
+        }
+
+
+
+        [HttpPost("withMed")]
+        public async Task<IActionResult> SendEmail_2(EmailDto request)
+        {
+            var responce = await _mediator.Send(new SendEmail_R { email = request });
+            return Ok(responce);
         }
     }
 }

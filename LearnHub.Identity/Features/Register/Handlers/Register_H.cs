@@ -1,5 +1,6 @@
 ﻿using LearnHub.Application.Responses;
 using LearnHub.Domain.Enum;
+using LearnHub.Identity.Enum;
 using LearnHub.Identity.Features.Register.Requests;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.En;
@@ -33,6 +34,8 @@ namespace LearnHub.Identity.Features.Register.Handlers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
             user.role_Em = (LearnHub.Domain.Enum.Role_Em)request.register_Dto.role;
+            user.IsReport = false;
+            user.Gender_Em = (Gender_Em)request.register_Dto.gender_Em;
 
             await _user.Add(user);
 

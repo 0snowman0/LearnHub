@@ -1,4 +1,5 @@
 ﻿using LearnHub.Domain.Enum;
+using LearnHub.Identity.Enum;
 using System.ComponentModel.DataAnnotations;
 
 namespace LearnHub.Identity.Model.En
@@ -15,6 +16,10 @@ namespace LearnHub.Identity.Model.En
         public DateTime TokenCreated { get; set; }
         public DateTime TokenExpires { get; set; }
         public  bool IsReport { get; set; }
-        public  Role_Em role_Em { get; set; }
+
+        public Domain.Enum.Role_Em role_Em { get; set; }
+        public Gender_Em Gender_Em { get; set; }
+
+
     }
 }
