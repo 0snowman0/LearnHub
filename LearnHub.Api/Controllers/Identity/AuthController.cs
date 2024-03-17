@@ -6,7 +6,6 @@ using LearnHub.Identity.Features.Login.Requests;
 using LearnHub.Identity.Features.Register.Requests;
 using LearnHub.Identity.IdentityService.Abstract;
 using LearnHub.Identity.Model.Dto;
-using LearnHub.Identity.Model.En;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,16 +1,16 @@
-using LearnHub.Persistence;
+using LearnHub.Application;
+using LearnHub.Email;
+using LearnHub.File;
 using LearnHub.Identity;
-using LearnHub.Identity.IdentityService.Abstract;
-using LearnHub.Identity.IdentityService.Implement;
-using Microsoft.OpenApi.Models;
+using LearnHub.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
-using LearnHub.Application;
-using LearnHub.File;
+using System.Text;
 using ZarinPal.Class;
-using LearnHub.Email;
+using LearnHub.SMS;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,6 +78,7 @@ builder.Services.ConfigureFileServices();
 
 builder.Services.ConfigureEmail();
 
+builder.Services.ConfigureSMS();
 #endregion
 
 

@@ -20,6 +20,7 @@
     <ProjectReference Include="..\LearnHub.Email\LearnHub.Email.csproj" />
     <ProjectReference Include="..\LearnHub.File\LearnHub.File.csproj" />
     <ProjectReference Include="..\LearnHub.Persistence\LearnHub.Persistence.csproj" />
+    <ProjectReference Include="..\LearnHub.SMS\LearnHub.SMS.csproj" />
   </ItemGroup>
 
 </Project>
