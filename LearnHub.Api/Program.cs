@@ -76,7 +76,7 @@ builder.Services.ConfigureApplicationServices();
 
 builder.Services.ConfigureFileServices();
 
-builder.Services.ConfigureEmailServices();
+builder.Services.ConfigureEmail();
 
 #endregion
 
@@ -87,6 +87,7 @@ builder.Services.AddScoped<Payment, ZarinPal.Class.Payment>();
 builder.Services.AddSingleton<ZarinPal.Class.Authority>();
 
 builder.Services.AddTransient<ZarinPal.Class.Transactions>();
+
 
 
 var app = builder.Build();

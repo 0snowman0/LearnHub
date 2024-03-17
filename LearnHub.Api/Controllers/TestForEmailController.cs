@@ -1,4 +1,5 @@
 ﻿using LearnHub.Email;
+using LearnHub.Email.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +9,19 @@ namespace LearnHub.Api.Controllers
     [ApiController]
     public class TestForEmailController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult SendEmail()
-        {
-            string subject = "موضوع ایمیل";
-            string message = "متن ایمیل";
-            string to = "آدرس ایمیل گیرنده";
 
-            LocalMailService service = new LocalMailService();
-            service.Send(subject, message);
-            
-            return Ok("done");
+        private readonly IEmailService _emailService;
+
+        public TestForEmailController(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
+
+        [HttpPost]
+        public IActionResult SendEmail(EmailDto request)
+        {
+            _emailService.SendEmail(request);
+            return Ok();
         }
     }
 }
