@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using LearnHub.Application.Contracts.Course;
+using LearnHub.Application.Dto.Course.course.command;
 using LearnHub.Application.Features.Course.Requests.Commands;
 using LearnHub.Application.Responses;
+using LearnHub.Application.Validation.Course.course.command;
 using LearnHub.Domain.Model.course;
 using LearnHub.File.Interface;
 using MediatR;
@@ -13,17 +16,31 @@ namespace LearnHub.Application.Features.Course.Handlers.Commands
         private readonly IMapper _mapper;
         private readonly ICourse _course;
         private readonly IFileService _fileService;
+        private readonly IValidator<Create_Course_Dto> _validator;
 
-        public Create_Course_H(IMapper mapper, ICourse course, IFileService fileService)
+        public Create_Course_H(IMapper mapper, ICourse course, IFileService fileService, IValidator<Create_Course_Dto> validator)
         {
             _mapper = mapper;
             _course = course;
             _fileService = fileService;
+            _validator = validator;
         }
 
         public async Task<BaseCommandResponse> Handle(Create_Course_R request, CancellationToken cancellationToken)
         {
             var responce = new BaseCommandResponse();
+
+
+            #region Validation
+            var Validate = await _validator.ValidateAsync(request.create_Course_Dto);
+
+            if (!Validate.IsValid)
+            {
+                responce.BadRequest(responce.ConvertValidationFailureToLisString(Validate.Errors));
+                return responce;
+            }
+            #endregion
+
 
             var NewCousre = _mapper.Map<Course_En>(request.create_Course_Dto);
 

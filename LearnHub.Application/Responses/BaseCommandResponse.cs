@@ -1,4 +1,6 @@
-﻿namespace LearnHub.Application.Responses
+﻿using FluentValidation.Results;
+
+namespace LearnHub.Application.Responses
 {
     public class BaseCommandResponse
     {
@@ -39,5 +41,30 @@
             StatusCode = 404;
             Data = data;
         }
+
+        public void BadRequest(List<string>? errors = null)
+        {
+            IsSuccess = false;
+            Message = "Bad Request";
+            Errors = errors;
+            StatusCode = 400;
+            Data = null;
+        }
+
+
+
+        public List<string> ConvertValidationFailureToLisString
+            (List<ValidationFailure> validationFailures)
+        {
+            List<string> result = new List<string>();
+            foreach (var validationFailure in validationFailures)
+            {
+                var res = validationFailure.ToString();
+                result.Add(res);
+            }
+            return result;
+        }
+
+
     }
 }

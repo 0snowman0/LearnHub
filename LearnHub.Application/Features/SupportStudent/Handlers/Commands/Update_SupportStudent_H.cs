@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using LearnHub.Application.Contracts.Support.SupportStudent;
+using LearnHub.Application.Dto.Support.SupportStudent.command;
 using LearnHub.Application.Features.SupportStudent.Requests.Commands;
 using LearnHub.Application.Responses;
 using MediatR;
@@ -10,17 +12,27 @@ namespace LearnHub.Application.Features.SupportStudent.Handlers.Commands
     {
         private readonly IMapper _mapper;
         private readonly ISupportStudent _supportStudent;
-
-        public Update_SupportStudent_H(IMapper mapper, ISupportStudent supportStudent)
+        private readonly IValidator<Update_SupportStudent_Dto> _validator;
+        public Update_SupportStudent_H(IMapper mapper, ISupportStudent supportStudent, IValidator<Update_SupportStudent_Dto> validator)
         {
             _mapper = mapper;
             _supportStudent = supportStudent;
+            _validator = validator;
         }
         public async Task<BaseCommandResponse> Handle
             (Update_SupportStudent_R request, CancellationToken cancellationToken)
         {
             var responce = new BaseCommandResponse();
 
+            #region Validation
+            var Validate = await _validator.ValidateAsync(request.update_SupportStudent_Dto);
+
+            if (!Validate.IsValid)
+            {
+                responce.BadRequest(responce.ConvertValidationFailureToLisString(Validate.Errors));
+                return responce;
+            }
+            #endregion
 
             var Target = await _supportStudent.Get(request.update_SupportStudent_Dto.Id);
 

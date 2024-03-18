@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dto.Payment;
+using FluentValidation;
 using LearnHub.Application.Contracts.Course;
 using LearnHub.Application.Contracts.FinancialSector;
 using LearnHub.Application.Contracts.payment;
