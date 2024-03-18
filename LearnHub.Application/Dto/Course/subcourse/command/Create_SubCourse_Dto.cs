@@ -1,5 +1,4 @@
-﻿using LearnHub.Application.Dto.Course.course.common;
-using LearnHub.Application.Dto.Course.subcourse.common;
+﻿using LearnHub.Application.Dto.Course.subcourse.common;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations.Schema;
 

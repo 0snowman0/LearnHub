@@ -51,7 +51,14 @@
     <Folder Include="Features\Profile\Student\Handlers\Commands\" />
     <Folder Include="Features\Profile\Student\Requests\Commands\" />
     <Folder Include="Model\" />
-    <Folder Include="Validation\" />
+    <Folder Include="Validation\Admin\Financial\" />
+    <Folder Include="Validation\Financial\Payment\command\" />
+    <Folder Include="Validation\Financial\Payment\common\" />
+    <Folder Include="Validation\profile\Admin\command\" />
+    <Folder Include="Validation\profile\Admin\common\" />
+    <Folder Include="Validation\profile\Student\common\" />
+    <Folder Include="Validation\profile\Teacher\common\" />
+    <Folder Include="Validation\store\common\" />
   </ItemGroup>
 
   <ItemGroup>

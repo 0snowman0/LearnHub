@@ -5,7 +5,7 @@ namespace LearnHub.Application.Dto.comment.command
 {
     public class Update_Comment_Dto : BaseDto_Dto , IComment_Dto 
     {
-        public string Content { get; set; }
+        public string Content { get; set; } = string.Empty;
         public bool IsReport { get; set; }
     }
 }

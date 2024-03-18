@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace LearnHub.Application.Dto.comment.common
+﻿namespace LearnHub.Application.Dto.comment.common
 {
     public interface IComment_Dto
     {

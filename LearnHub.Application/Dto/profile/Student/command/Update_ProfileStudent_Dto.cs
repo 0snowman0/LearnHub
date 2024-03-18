@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace LearnHub.Application.Dto.profile.Student.command
+﻿namespace LearnHub.Application.Dto.profile.Student.command
 {
     public class Update_ProfileStudent_Dto
     {
