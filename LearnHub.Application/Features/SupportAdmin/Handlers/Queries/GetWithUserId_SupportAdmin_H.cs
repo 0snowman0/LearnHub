@@ -26,10 +26,9 @@ namespace LearnHub.Application.Features.SupportAdmin.Handlers.Queries
 
             var SupportAdmin = await _supportAdmin.GetWithAdminId(request.AdminId);
 
-            if(SupportAdmin == null)
+            if(!SupportAdmin.Any())
             {
-                responce.Failure();
-                responce.StatusCode = 404;
+                responce.NotFound();
                 responce.Errors = new List<string> {$"not found support massage with id:{request.AdminId}." };
                 return responce;
             }
