@@ -14,7 +14,7 @@ using Moq;
 using Shouldly;
 
 
-namespace LearnHub.Test.Test.Support.Admin.command
+namespace LearnHub.Test.Test.Support.Admin
 {
     public class TestSupportAdmin_T
     {
@@ -81,7 +81,7 @@ namespace LearnHub.Test.Test.Support.Admin.command
 
             var handler = new Get_SupportAdmin_H(_mapper, _mockRepository.Object);
 
-            var result = await handler.Handle(new Get_SupportAdmin_R() { Id = 1}, CancellationToken.None);
+            var result = await handler.Handle(new Get_SupportAdmin_R() { Id = 1 }, CancellationToken.None);
 
 
 
@@ -189,7 +189,7 @@ namespace LearnHub.Test.Test.Support.Admin.command
 
             var SupportAdmin = await _mockRepository.Object.Get(_Update_SupportAdmin_Dto.Id);
 
-            Assert.Equal(SupportAdmin.SupportStudentId , 2);
+            Assert.Equal(SupportAdmin.SupportStudentId, 2);
 
         }
 
@@ -206,7 +206,7 @@ namespace LearnHub.Test.Test.Support.Admin.command
 
             var result = await handler.Handle(new Delete_SupportAdmin_R()
             {
-                Ids = new List<int> { 1 , 2}
+                Ids = new List<int> { 1, 2 }
             }, CancellationToken.None);
 
 
@@ -214,7 +214,7 @@ namespace LearnHub.Test.Test.Support.Admin.command
 
             var SupportAdmins = await _mockRepository.Object.GetAll();
 
-            Assert.Equal(SupportAdmins.Count(),1);
+            Assert.Equal(SupportAdmins.Count(), 1);
 
         }
 
