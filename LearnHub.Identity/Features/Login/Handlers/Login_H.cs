@@ -85,6 +85,6 @@ namespace LearnHub.Identity.Features.Login.Handlers
                 var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
                 return computedHash.SequenceEqual(passwordHash);
             }
-        }
+        }     
     }
 }

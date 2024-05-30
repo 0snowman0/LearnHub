@@ -16,6 +16,7 @@
     <PackageReference Include="Shouldly" Version="4.2.1" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="7.102.2.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Mocks\course\" />
     <Folder Include="Test\Admin\command\" />
     <Folder Include="Test\Admin\queries\" />
   </ItemGroup>

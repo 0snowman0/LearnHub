@@ -14,6 +14,7 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.1" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="7.102.2.4" />
   </ItemGroup>
 
   <ItemGroup>

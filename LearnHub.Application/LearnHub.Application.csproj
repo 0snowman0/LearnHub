@@ -13,6 +13,7 @@
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="7.102.2.4" />
     <PackageReference Include="Zarinpal" Version="3.0.1" />
   </ItemGroup>
 
