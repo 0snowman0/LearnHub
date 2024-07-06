@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  demo_app_db:
+    Container_name: app_db
+  learnhub.api:
+    Container_name: Learn_hub_Demo #add container name
+    image: ${DOCKER_REGISTRY-}learnhubapi
+    build:
+      context: .
+      dockerfile: LearnHub.Api/Dockerfile
+    ports:
+       -8001:80
+

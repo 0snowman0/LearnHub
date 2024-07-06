@@ -37,5 +37,12 @@ namespace LearnHub.Api.Controllers
             var responce = await _mediator.Send(new SendEmail_R { email = request });
             return Ok(responce);
         }
+
+
+        [HttpGet]
+        public ActionResult DockerTest()
+        {
+            return Ok("Hello Docker");
+        }
     }
 }

@@ -6,49 +6,45 @@ namespace LearnHub.Persistence.Repositories.Generic
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly Context_En _context;
-        private DbSet<T> table;
+        private readonly DbSet<T> _dbSet;
+
         public GenericRepository(Context_En context)
         {
             _context = context;
-            table = _context.Set<T>();
-        }
-        public async Task Add(T entity)
-        {
-            await _context.BulkInsertAsync(new List<T> { entity });
-        }
-
-        public async Task Delete(List<int> ids)
-        {
-            var entities = new List<T>();
-
-            foreach (var id in ids)
-            {
-                var entity = await Get(id);
-                if (entity == null)
-                {
-                    throw new Exception($"Entity with ID {id} not found.");
-                }
-
-                entities.Add(entity);
-            }
-
-            await _context.BulkDeleteAsync(entities);
-        }
-
-        public async Task<bool> Exists(int id)
-        {
-            var entity = await _context.Set<T>().FindAsync(id);
-            return entity != null;
+            _dbSet = _context.Set<T>();
         }
 
         public async Task<T?> Get(int id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            return await _dbSet.FindAsync(id);
         }
 
         public async Task<IEnumerable<T>> GetAll()
         {
-            return await table.ToListAsync();
+            return await _dbSet.ToListAsync();
+        }
+
+        public async Task Add(T entity)
+        {
+            await _dbSet.AddAsync(entity);
+        }
+
+        public async Task Update(T entity)
+        {
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public async Task Delete(List<int> ids)
+        {
+            foreach (var id in ids)
+            {
+                var entity = await _dbSet.FindAsync(id);
+                if (entity != null)
+                {
+                    _dbSet.Remove(entity);
+                }
+            }
         }
 
         public void Save()
@@ -61,9 +57,10 @@ namespace LearnHub.Persistence.Repositories.Generic
             await _context.SaveChangesAsync();
         }
 
-        public async Task Update(T entity)
+        public async Task<bool> Exists(int id)
         {
-            await _context.BulkUpdateAsync(new List<T> { entity });
+            var entity = await _dbSet.FindAsync(id);
+            return entity != null;
         }
     }
 }

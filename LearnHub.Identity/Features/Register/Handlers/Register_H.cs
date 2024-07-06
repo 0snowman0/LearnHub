@@ -38,7 +38,7 @@ namespace LearnHub.Identity.Features.Register.Handlers
             user.Gender_Em = (Gender_Em)request.register_Dto.gender_Em;
 
             await _user.Add(user);
-
+            await _user.SaveAsync();
             responce.Success(user);
             return responce;
         }
